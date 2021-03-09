@@ -5,9 +5,10 @@
 ・Slack APIにアクセスしてBot作成
     https://api.slack.com/apps
 
-・slackbot_settings.py
-　APIトークンを編集して使う
-　APIトークンは個人情報のためコミットしない
+・API_TOKENを環境変数に追加
+　export API_TOKEN=xxxxxx
+  確認方法
+  echo $API_TOKEN
 
 ・参考URL
     https://qiita.com/sukesuke/items/1ac92251def87357fdf6
@@ -16,3 +17,5 @@
 
     天気予報の情報
     https://weather.tsukumijima.net
+
+・SlackBotライブラリのインストール
