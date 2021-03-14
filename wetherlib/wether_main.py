@@ -8,6 +8,10 @@ import requests                         # URLアクセスを制御するため�
 @respond_to('天気')
 def mention_func(message):
     url = "https://weather.tsukumijima.net/api/forecast/city/400010"
+
+    message.reply('今日の{0}の天気は{1}です。'.format(location,wether_today))
+
+def get_wether(url):
     # URLアクセスして情報を取得する
     response = requests.get(url)
     # URL取得に失敗した場合の例外処理を行うメソッド
@@ -18,5 +22,3 @@ def mention_func(message):
     #出力データを変数に代入
     wether_today = weather_data['forecasts'][0]['telop']
     location = weather_data['location']['city']
-
-    message.reply('今日の{0}の天気は{1}です。'.format(location,wether_today))
