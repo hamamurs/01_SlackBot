@@ -9,8 +9,7 @@ def get_weather(city_number):
     response.raise_for_status()
     # 取得したjsonデータをテキストとして読み込む
     weather_data = json.loads(response.text)
-
-    return(weather_data)
+    return weather_data
 
 def main():
     w = get_weather(400010)

@@ -5,21 +5,15 @@ from slackbot.bot import default_reply  # 該当する応答がない場合に�
 import json
 import requests                         # URLアクセスを制御するためのライブラリを読み込む
 
+if __name__ == '__main__':
+    import weather as weather
+else:
+    import weatherlib.weather as weather
+
 @respond_to('天気')
 def mention_func(message):
-    url = "https://weather.tsukumijima.net/api/forecast/city/400010"
-    location,weather_today = get_weather(url)
-    message.reply('今日の{0}の天気は{1}です。'.format(location,weather_today))
-
-def get_weather(url):
-    # URLアクセスして情報を取得する
-    response = requests.get(url)
-    # URL取得に失敗した場合の例外処理を行うメソッド
-    response.raise_for_status()
-    # 取得したjsonデータをテキストとして読み込む
-    weather_data = json.loads(response.text)
-
+    w = weather.get_weather(400010)
     #出力データを変数に代入
-    weather_today = weather_data['forecasts'][0]['telop']
-    location = weather_data['location']['city']
-    return location,weather_today
+    weather_today = w['forecasts'][0]['telop']
+    location = w['location']['city']
+    message.reply('今日の{0}の天気は{1}です。'.format(location,weather_today))
