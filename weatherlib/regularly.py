@@ -25,9 +25,9 @@ class CrontabControl:
             print("予定していたスケジュールを実行しました")
  
 def main():
-    command = 'python3 ./wetherlib/cronweather.py'
-    schedule = '33 0 * * *'
-    file = 'output.tab'
+    command = 'python3 ./weatherlib/cronweather.py'
+    schedule = '51 9 * * *'
+    file = './weatherlib/output.tab'
  
     # インスタンス作成
     c = CrontabControl()

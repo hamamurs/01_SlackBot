@@ -1,11 +1,11 @@
 # coding: utf-8
 
 from slackbot.bot import Bot
-import wetherlib.regularly as WetherReg
+import weatherlib.regularly as WeatherReg
 
 def main():
     bot = Bot()
-    WetherReg.main()
+    WeatherReg.main()
     bot.run()
 
 if __name__ == "__main__":
