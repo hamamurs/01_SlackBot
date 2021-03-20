@@ -8,4 +8,4 @@ API_TOKEN = os.environ["API_TOKEN"]
 DEFAULT_REPLY = "まだその要望には対応してへんで"
 
 # プラグインスクリプトを置いてあるサブディレクトリ名のリスト
-PLUGINS = ['plugins','weatherlib']
+PLUGINS = ['plugins','weatherlib','usersetting']
