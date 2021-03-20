@@ -26,7 +26,7 @@ class CrontabControl:
  
 def main():
     command = 'python3 ./weatherlib/cronweather.py'
-    schedule = '51 9 * * *'
+    schedule = '25 23 * * *'
     file = './weatherlib/output.tab'
  
     # インスタンス作成
